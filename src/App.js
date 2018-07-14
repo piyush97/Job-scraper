@@ -27,7 +27,16 @@ class App extends Component {
 <div>
 <center><h1>Jobs in New Delhi</h1></center>
 {this.state.jobs && this.state.jobs.length && 
-  <p ></p> 
+ this.state.jobs.map(obj => <p>
+                    Company: {obj.company} 
+                    <br/>
+                    Title: {obj.title}
+                    <br/>
+Date: {obj.date}<br/>
+Location :{obj.location}<br/>
+<a href={obj.url} >Visit? </a> 
+
+                    </p>)
  }
 </div>
     );
