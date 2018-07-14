@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+
 class App extends Component {
   constructor(props){
  super(props);
@@ -22,12 +23,13 @@ class App extends Component {
              }              
   render() {
     return (
-      <div className="body">
-       <header className="app-header">Real Time Jobs data</header>
-      <div className="app-card-list" id="app-card-list">
 
-    </div>
-      </div>
+<div>
+<center><h1>Jobs in New Delhi</h1></center>
+{this.state.jobs && this.state.jobs.length && 
+  <p ></p> 
+ }
+</div>
     );
   }
 }
