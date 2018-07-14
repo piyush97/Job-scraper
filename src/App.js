@@ -7,11 +7,15 @@ class App extends Component {
  this.state={
   jobs:[]
  }
+
  }                   
   render() {
     return (
       <div className="App">
-       
+       <header className="app-header"></header>
+      <div className="app-card-list" id="app-card-list">
+      
+    </div>
       </div>
     );
   }
