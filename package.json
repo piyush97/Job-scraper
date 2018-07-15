@@ -4,13 +4,9 @@
   "homepage": "http://piyushmehta.me/Job-scraper",
   "private": true,
   "dependencies": {
-    "@material-ui/core": "^1.4.0",
-    "@mdi/font": "^2.5.94",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "react-scripts": "1.1.4",
-    "superagent": "^3.8.3",
-    "typeface-roboto": "0.0.54"
+    "react-scripts": "1.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
