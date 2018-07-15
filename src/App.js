@@ -1,33 +1,36 @@
 import React, { Component } from 'react';
 import './App.css';
+import superagent from "superagent";
 
 class App extends Component {
-  constructor(props){
- super(props);
- this.state={
-  jobs:[]
- }
 
-  }   
-  componentWillMount()
-{const Jobser=this;
+ state={
+  jobs:[]
+ };
+componentDidMount(){
+                      const checker=this;
  var url = "https://indreed.herokuapp.com/api/jobs/?q=JavaScript&l=New%20Delhi&country=in"
-            fetch(url)
-              .then(function(response) {
-                return response.json();
-              })
-              .then(function(myJson) {
-                Jobser.setState({jobs:myJson});
-                console.log('$$$$$$',myJson);
-              });
-             }              
+      superagent
+      .get(url)
+      .then(function(response) {
+        checker.setState({jobs:response.body});
+      })
+      .catch(function(err) {
+            console.log(err);
+
+        // err.message, err.response
+      });
+         
+  }   
+ 
+            
   render() {
     return (
 
 <div>
 <center><h1>Jobs in New Delhi</h1></center>
 {this.state.jobs && this.state.jobs.length && 
- this.state.jobs.map(obj => <p>
+ this.state.jobs.map(obj => <p key={obj.id}>
                     Company: {obj.company} 
                     <br/>
                     Title: {obj.title}
